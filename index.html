@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>LightDM WebKit2 Obscura</title>
         <link rel="stylesheet" href="css/style.css">
+        <title>LightDM Obscura</title>
         <script src="js/script.js"></script>
     </head>
     <body>
-        <form>
-            <input type="text" id="name">
-            <input type="password" id="password">
-            <button type="submit" id="login-btn">Login</button>
-        </form>
+        <div id="toast-container"></div>
+        <div id="login-box">
+            <form id="content" action="javascript: provide_secret();">
+                <img id="avatar" class="unselectable">
+                <div>
+                    <span>
+                        <p id="name"></p>
+                        <button class="ghost xl-font icon" type="button" id="user-dropdown-btn">&#xe92e;</button>
+                    </span>
+                </div>
+                <div id="user-dropdown" class="drop-container image"></div>
+                <div class="unselectable iflex">
+                    <input type="password" placeholder="Password" id="password-box">
+                    <button class="icon" id="login-btn" type="submit">&#xe9cd;</button>
+                </div>
+                <div class="system-buttons">
+                    <button id="shutdown-btn" title="Shutdown" class="icon-btn shutdown">
+                        <img src="assets/shutdown.svg" alt="Shutdown">
+                    </button>
+                    <button id="restart-btn" title="Restart" class="icon-btn restart">
+                        <img src="assets/restart.svg" alt="Restart">
+                    </button>
+                    <button id="sleep-btn" title="Sleep" class="icon-btn sleep">
+                        <img src="assets/sleep.svg" alt="Sleep">
+                    </button>
+                </div>
+            </form>
+        </div>
     </body>
 </html>

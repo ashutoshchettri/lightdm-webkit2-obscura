@@ -1,0 +1,258 @@
+:root {
+    --background: #151515;
+    --background-medium: #181818;
+    --background-low: #1C1C1C;
+    --foreground: #E8E3E3;
+    --accent: #8DA3B9;
+    --background-lower: #222;
+    --grey: #636363;
+    --red: #B66467;
+}
+
+@font-face {
+    font-family: 'feather';
+    src: url(../assets/feather.ttf);
+    font-style: normal;
+    font-display: block;
+}
+
+*:not(img) {
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--foreground);
+    outline: none;
+}
+
+.drop-container {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 61.5%;
+    font-size: 14px;
+    background-color: var(--background-medium);
+    border-color: var(--background-lower);
+    border-width: 2px;
+    border-style: solid;
+    min-width: 120px;
+    z-index: 100;
+    padding: 0;
+}
+
+.drop-container > div {
+    height: 32px;
+    line-height: 32px;
+    padding: 0 12px;
+    text-decoration: none;
+    z-index: 100;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: block;
+    text-align: start;
+}
+
+.drop-container.image > div {
+    padding-left: 40px;
+}
+
+body {
+    overflow: hidden;
+    -khtml-user-select: text;
+    user-select: text;
+    -moz-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+}
+
+body::before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background-image: url(../assets/space.jpg);
+    background-size: cover;
+}
+
+*::selection {
+    background-color: var(--accent);
+    color: var(--background);
+}
+
+#toast-container > div,
+#login-box,
+.ghost {
+    background-color: transparent;
+}
+
+button, input {
+    background-color: var(--background-medium);
+    color: var(--foreground);
+}
+
+button {
+    border: solid 2px var(--accent);
+    height: 32px;
+    min-width: 32px;
+    cursor: pointer;
+}
+
+#login-btn:hover:not(:disabled) {
+    background-color: var(--accent);
+    color: var(--background);
+}
+
+button:hover {
+    color: var(--accent);
+}
+
+input {
+    padding: 0 8px;
+    margin-right: 4px;
+    height: 28px;
+    border: solid 2px var(--background-low);
+    width: 240px;
+}
+
+input:focus {
+    border-color: var(--accent);
+}
+
+#name {
+    font-size: x-large;
+    display: inline-block;
+}
+
+.icon {
+    font-family: 'feather';
+}
+
+#avatar {
+    border-radius: 50%;
+    pointer-events: none;
+    width: 128px;
+    height: 128px;
+}
+
+.sm-avatar {
+    pointer-events: none;
+    max-width: 32px;
+    max-height: 32px;
+    position: absolute;
+    left: 0;
+}
+
+.show {
+    display:block;
+}
+
+.ghost {
+    border: none;
+}
+
+.xl-font {
+    font-size: large;
+}
+
+#content {
+    text-align: center;
+    margin: 10%;
+}
+
+#toast-container {
+    right: 4px;
+    z-index: 1000;
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#toast-container > :not(:last-child) {
+    margin-bottom: 4px;
+}
+
+#login-btn:disabled {
+    border-color: var(--background-low);
+    color: var(--grey);
+}
+
+#toast-container > div {
+    font-size: smaller;
+    width: fit-content;
+    padding: 16px 32px;
+    border: solid 2px var(--background-lower);
+}
+
+.iflex {
+    display: inline-flex;
+}
+
+#toast-container > div.err {
+    border-color: var(--red);
+}
+
+#login-box {
+    padding: 16px;
+    height: 400px;
+    position: fixed;
+    margin:auto;
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    width: 600px;
+}
+
+.system-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .system-buttons .icon-btn {
+    padding: 20px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    box-shadow: none;
+  }
+  
+  .system-buttons img {
+    width: 2rem;
+    height: 2rem;
+    transition: all 0.3s ease;
+  }
+  
+  .system-buttons .shutdown img {
+    filter: brightness(0) invert(1);
+  }
+  
+  .system-buttons .restart img {
+    filter: brightness(0) invert(1);
+  }
+  
+  .system-buttons .sleep img {
+    filter: brightness(0) invert(1);
+  }
+  
+  .system-buttons .shutdown:hover img {
+    filter: brightness(0) invert(27%) sepia(76%) saturate(3500%) hue-rotate(355deg);
+  }
+  
+  .system-buttons .restart:hover img {
+    filter: brightness(0) invert(49%) sepia(79%) saturate(2400%) hue-rotate(30deg);
+  }
+  
+  .system-buttons .sleep:hover img {
+    filter: brightness(0) invert(47%) sepia(60%) saturate(1000%) hue-rotate(100deg);
+  }
